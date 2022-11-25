@@ -1,9 +1,10 @@
-import React from 'react'
+import AllBooks from 'components/books/allBooks';
+import React from 'react';
 
 export const App = () => {
   return (
     <div>
-      Find me in src/app.js!
+      <AllBooks />
     </div>
-  )
-}
+  );
+};
