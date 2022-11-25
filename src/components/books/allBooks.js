@@ -1,7 +1,8 @@
 import InputSearch from 'components/input/inputSearch';
 import { getBooks } from 'lib/api';
 import React, { useEffect, useState } from 'react';
-import { FaBookOpen } from 'react-icons/fa';
+import { FaBookOpen, FaStar } from 'react-icons/fa';
+import { IoPeople } from 'react-icons/io5';
 import styles from './allBooks.module.css';
 
 const AllBooks = () => {
@@ -22,16 +23,22 @@ const AllBooks = () => {
     <div className={styles.wrapper}>
       <div className={styles.container}>
         <h1> Books! </h1>
-        <p className={styles.p}> Search for title:</p>
+        <h2 className={styles.p}> Search for title:</h2>
         <InputSearch setBookList={setBookList} />
         <div className={styles.bookContainer}>
           {bookList.map((book) => (
             <div className={styles.book} key={book.id}>
-              <div className={styles.icon}>
-                <FaBookOpen />
-              </div>
               <div className={styles.about}>
-                <p key={book.id}>{book.title}</p>
+                <h3 key={book.id}>{book.title}</h3>
+                <p>
+                  <IoPeople /> {book.authors}
+                </p>
+                <p>
+                  <FaBookOpen /> {book.num_pages}
+                </p>
+                <p>
+                  <FaStar /> {Math.round(book.average_rating * 10) / 10}
+                </p>
               </div>
             </div>
           ))}
