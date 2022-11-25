@@ -32,10 +32,19 @@
 }
 
 .book {
-  background-color: #b1c7ad;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #c4d6c4;
+  margin-bottom: 1rem;
+  border-radius: 16px;
+}
+
+.about {
+  /* background-color: #b1c7ad; */
   border-radius: 0.2rem;
   padding: 1rem;
-  margin-bottom: 2rem;
   min-width: 20rem;
   width: 30rem;
 }

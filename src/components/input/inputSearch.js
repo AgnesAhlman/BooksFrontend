@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-closing-bracket-location */
 import { getBooksByTitle } from 'lib/api';
 import React, { useState } from 'react';
-import { FaSearch } from 'react-icons/fa';
+
 import styles from './input.module.css';
 
 const InputSearch = (props) => {
@@ -20,17 +20,14 @@ const InputSearch = (props) => {
         <input
           className={styles.input}
           placeholder="Search for title"
-          id="movie-input"
+          id="book-input"
           name="title"
           type="text"
           value={bookInputSearch}
           onChange={(event) => setBookInputSearch(event.target.value)}
         />
       </label>
-      <button type="submit">
-        {' '}
-        <FaSearch />{' '}
-      </button>
+      <button type="submit">Search</button>
     </form>
   );
 };
